@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+
+<head>
+<meta charset="UTF-8 "/>
+<title>Boletim</title>
+<style>
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(90deg, black, gray);
+    color: rgb(9, 255, 0);
+ }
+.BL { 
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+     position: absolute;
+     top: 50px;
+     left: 450px; 
+     border-radius: 10px; 
+     padding: 40px;
+}
+
+.SS {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 450px;
+    left: 320px; 
+    border-radius: 10px; 
+    padding: 50px;
+}
+nav#menu{
+        display: block;
+}
+nav#menu ul{
+    list-style: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: -15px;
+    left: 490px;
+}
+
+nav#menu li {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius:10px;
+    margin: 2px;
+}
+nav#menu h1 {
+    display: none;
+}
+nav#menu a{
+    color:gray;
+    text-decoration: none;
+}
+nav#menu a:hover{
+    color: whitesmoke;
+    text-decoration: underline;
+
+    
+}
+
+</style>
+</head>
+
+<body>
+    <nav id="menu">
+        <h1>Menu</h1>
+        <ul>
+            <li><a href="index.html">Boletim</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+        </ul>
+    </nav>
+<div class="BL">
+<h1>Boletim</h1>
+<p>Primeiro Bimestre
+<input type="number" id="bimestre1">
+</p>
+
+<p>Segundo Bimestre
+<input type="number" id="bimestre2">
+</p>
+
+<p>Terceiro Bimestre
+<input type="number" id="bimestre3">
+</p>
+
+<p>Quarto Bimestre
+<input type="number" id="bimestre4">
+<br>
+        <button onclick="calcularSoma()">Calcular resultado</button>
+        <p><span id="soma"></span></p>
+        <p>Nota final: <span id="resultado"></span> </p>
+
+</p>
+</div>
+<div class="SS">
+    <h1>Sobre o site:</h1>
+    <p>Esse site tem como objetivo ajudar professores e alunos a calcular a nota final.<br/> Economizando tempo e tendo um resultado rápido e fácil</p>
+</div>
+<script>
+    function calcularSoma() {
+        var bimestre1 = parseFloat(document.getElementById("bimestre1").value) || 0;
+        var bimestre2 = parseFloat(document.getElementById("bimestre2").value) || 0;
+        var bimestre3 = parseFloat(document.getElementById("bimestre3").value) || 0;
+        var bimestre4 = parseFloat(document.getElementById("bimestre4").value) || 0;
+
+        var soma = bimestre1 + bimestre2 + bimestre3 + bimestre4;
+        var resultado = soma / 4
+        document.getElementById("resultado").innerText = resultado;
+    }
+</script>
+
+</body>
+</html>
